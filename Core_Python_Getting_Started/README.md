@@ -16,6 +16,100 @@
 ----
 - `input()` : request input text from the user
 -----
+----
+## Chapter 2 (Collections)
+- **str**
+    - str is a sequence type
+    - sequence of unicode code points
+    - immutable
+    - multiLine string use 3 double quotes `""" """`
+    - row string (don't need to escape things) `r''`
+    - methods on strings :
+        - `capitalize()` : return a new string
+----
+- `Zen : practicality beats purity`
+----
+- **bytes**
+    - `b''`
+    - sequence of bytes
+    - used for :
+        - raw binary data
+        - fixed-width single-byte encoding (ex. ASCII)
+---
+- how to convert between strings and bytes ?
+    - you need to know the encoding of the bytes used to represent the string
+        - form string to byte :
+            - `encode()`
+        - from byte to string :
+            - `decode()`
+    
+---
+- `list`
+    - [] 
+    - sequence of objects
+    - Mutable
+    - methods on lists :
+        - `append` : add to the end of the list
+        
+----
+- `dict`
+    - Map keys to values
+    - `{key: value}`
+    - after python3.7 : 
+        - keys are kept in insertion order
+-----
+----
+## Chapter -2 (Classes)
+- **classes** :
+    - define the structure and behaviour of an object
+
+
+- ` python let you strike the wright balance between functions and classes`
+
+
+- `__init__`  : used for initializing new objects
+    - `__init__` : 
+        - is an initialized not a constructor 
+            - so it configures the object after it is already constructed
+            - the constructor is provided by the python, and it checks for a `__init__` method and call it if it exists
+    
+    - `self` is like `this` in java
+-----
+- by convention : implementation details of an object should stat with `_`
+---
+- **Class invariants :**
+    - truths  about an object that endure for its lifetime
+    - you can enforce them in the `__init__` method
+---
+- **the law of Demeter :**
+    - the principle of least knowledge
+    - help reduce coupling
+- you should never call methods on objects you received from other calls (only talk to your friends)
+    - ex. use method to interact with a composite object and don't call the methods on the object directly
+-----
+- Zen : `complex is better than complicated`
+    - many moving parts combined in a clever box are now one good tool
+---
+- **tell, don't ask :**
+    - tell other objects what to do instead of :
+        - asking them for their state and response to it 
+    - can reduce coupling 
+-----
+- polymorphism :
+    - using objects of different types through a uniform interface
+    - achieved in python through __duck Typing__
+    
+
+- what is duck typing ?
+    - an object's fitness to use only determined at use
+-----
+- inheritance :
+    - python use late binding for inheritance 
+        - no method calls or attribute look up are bonded to actual objects until the moment they are called
+            - so you can try any method on any object
+    - inheritance is used in python for sharing implementations
+---
+---
 ## Chapter -1
 - what is a resource ?
     - program element that must be released or closed after use
