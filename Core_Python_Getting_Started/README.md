@@ -112,12 +112,150 @@
 -----
 - Zen : special cases are not special enough to break the rules
 ----
+- the repetition operation :
+    - if you multiply string by a number :
+        - you get a string with a length equals to the number
+------
+## Chapter 5 (Built-in collections)
+### tuples :
+- immutable sequence of arbitrary objects
+- use `()` instead of `[]`
+- one element tuple :
+    - `(element,) ` [add the comma after the element]
+----
+#### tuple unpacking :
+- destructing operation that unpacks data structure into named references
+---
+### Strings :
+- immutable
+- use `join` for contacting string
+    - `join()` : takes a collection of strings and concat them with separator between them
+        - the separator is the string that the method is called on
+- `partition(sperator)`:
+    - return a tuple (before, separator, after)
+----
+### Range 
+- **sequence representing an arithmetic progression of integers**
+- create using `range()`
+    - one arg >>> stop value
+    - two args >>> start and stop
+    - three args >>> start, stop and step
+-------
+### enumerate 
+- **_construct an iterable of (index, value) tuples around another iterable_**
 
+---
+### List 
+- mutable
+- you can index from the end using negative numbers
+    - the last element is `-1`
+---
+#### Slicing 
+- a_list[start : stop]
+    - stop not included 
 
+- you can copy a list you can use :
+    - `a_list[:]`
+        - the elements inside that the list are still referencing the same objects
+            - this is called a **shallow copy**
+- `del` :
+    - you can use it to delete elements from the list
 
+- `reversed(a_list)`:
+    - does not return a list but s reverse iterator
+        - you can pass the returned value to `list()` to get a list
+-----
+### Dictionaries 
+- dict coping shallow by default
+- `my_dict.update(a_dict)`:
+    - extend a dict using another dict 
+-  `my_dict.items()`:
+    - return the key and value
 
 ----
-## Chapter -3 (Iteration) 
+### Sets 
+- **_unordered collection of unique elements_**
+- mutable
+- build using `{}`
+- to create an empty set : use `set()` :
+    - because `{}` create an empty dict
+---
+#### difference between `discard()` and `remove()`:
+- remove raise an exception if the element does not exist
+    - discard do nothing
+-----    
+#### set algebra operations 
+- union :
+    - `a_set.union(another set)`
+- intersection :
+    - `a_set.intersection(another set)`
+-  difference
+    - `a_set.difference(another set)`
+        - all elements in the first set that are not in the second set
+    
+
+- in one set or the other but not both :
+    - `symmetric_difference()`
+    
+
+- `issubset()`
+- `issuperset()`
+- `isdisjoint()` :
+    - true if the two sets have nothing in common 
+----
+---
+### protocols 
+- a protocol is a set of operations that a type must support to implement the protocols
+- examples :
+    - Container
+    - Sized
+    - iterable
+    - Sequence 
+    - Mutable sequence (list)
+    - Mutable set (set)
+    - Mutable Mapping (dict)
+-----
+## Chapter 6 (Exceptions)
+#### Exception handling :
+- mechanism for interrupting normal program flow and continuing in a surrounding context
+    - raise an exception >>> handle the exception
+    - unhandled exception cause the program to terminate
+---------------
+- use `try except` to handle exceptions
+---
+- exceptions resulting from a programmer errors :
+    - ex. (indention, syntax, name)
+        - should be identified and solved during development and not handled at run time
+---------
+- `!r`:
+    - if you insert `!r` after ab expression in a fString :   
+        - its ripple representation get inserted into the string
+            - `f'{exp!r}''`
+----
+- you can re-raise and exception using :
+    - `raise` in the catch block after you finished handling it
+
+-----
+- avoid catching `type errors`:
+    - if it works : then this increase functionality 
+    - if not : let type errors arise on their own
+---
+#### prepare for failure :
+- there are two ways :
+    - LBYL
+    - EAFP
+- EAFP is preferred in python
+    - hope for the best but prepare for consequences 
+
+
+- Exceptions + EAFP :
+    - make it very hard for problems to be silently ignored 
+-----------
+- put any clean up actions in :
+    - `finally`
+
+----
+## Chapter 7 (Iteration) 
 #### Comprehension :
 - Concise syntax for describing (list, set and dictionaries)
     - readable and expressive 
@@ -166,17 +304,9 @@
     - `count()` : an unbounded arithmetic sequence of ints
     - `chain()` : lazily contacting some iterables togethers   
     
-    
-
-
-
-
-
-
-
-
+ 
 ---
-## Chapter -2 (Classes)
+## Chapter 8 (Classes)
 - **classes** :
     - define the structure and behaviour of an object
 
@@ -227,7 +357,7 @@
     - inheritance is used in python for sharing implementations
     
 ---
-## Chapter -1
+## Chapter 9
 - what is a resource ?
     - program element that must be released or closed after use
     - python mange resources using context managers
