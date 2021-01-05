@@ -76,11 +76,42 @@
         - [0] is the script name
 
 ----
+## Chapter 4 (Objects)
+- **assignment operations bind objects to names (never copy by value)**
+- ints are immutable 
+- list are mutable 
+- `id()` : return a unique identifier for an object
+---
+- **python vars are all named references to objects** 
+---
+- args are referenced passed to functions 
+    - so you need to copy vars before passing them if you don't want them to change
+- return also return references and  does not copy the objects
+----
+- argument with default values must come after those with no default values
+---
+#### default value evaluation 
+- default ars are evaluated when `def` is executed
+    - **immutable** default value do not cause a problem
+    - **mutable** default value can cause a confusing effect
+- always use immutable objects as default values
+----
+- **python will not generally preform implicit conversion between types**
+    - **_except in ifs and loops_**
+---
+#### Scopes in python :
+1. **local** : inside the current function
+2. **enclosing** : inside enclosing functions
+3. **global** : at the top level of a module
+4. **built in**
+    - **LEGB**
 
-
-
-
-
+- scopes are added from `import` or `def` of a function or a class 
+- to access the global scope :
+    - use `global` 
+-----
+- Zen : special cases are not special enough to break the rules
+----
 
 
 
