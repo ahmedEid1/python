@@ -1,0 +1,79 @@
+## Chapter 1
+- Scaler Types :
+    - int
+      - unlimited precision signed integers
+    - float
+      - `float("nan"), float("inf"), float("-inf")`
+    - None
+      - null value
+    - bool
+        - `True` or `False`
+            - `0, [], ''` is falsy
+---
+- Zen :
+  - **_Flat is better than nested_**
+  - _**explict is better than implicit**_   
+----
+- `input()` : request input text from the user
+-----
+## Chapter -1
+- what is a resource ?
+    - program element that must be released or closed after use
+    - python mange resources using context managers
+---
+- `open(file, [mode], [encoding])` : open a file for reading or writing 
+-----
+- getting the default encoding of a system :
+    - `import sys`
+    - `sys.getdefaultencoding()`
+-----
+- opening files modes :
+    - w, r, a
+    - selector : 
+        - b, t
+----
+- `write()`:
+    - return the number of codePoints written to the file
+-  `open()` :
+    - return a file-like object
+    
+-  `read([num])`:
+    - **without args** : return all the content of the file in the first call then '' ''
+    - **in text mode**: takes number of char to read
+    - **in byte mode**: takes number of bytes to read
+
+- `seek()` : used to move the courser
+    - can only be moved to `0` or values form` tell()`
+    
+- `readLine()` : read the line by line on every call
+- `readLines()` : return a list of all the lines in the file
+-----
+- python has `writeLines` but not `writeline` !
+- `writeLines` :
+    - takes a list of string to add to the file
+        - note : you must add the ` \n` yourself to start a new line
+----
+- **the file object is iterable, so you can loop over it line by line**
+----
+- how to print without adding a new line between every two print statement ?
+    - you can use `sys.stdout.write()`
+---
+- to ensure the file get close :
+    - put the `open` in a `try` and the `close` in the `finally`
+        - or use a with-block
+----
+##### with-block
+- control flow structure for managing resources
+    - can be used with any object that support the context-manager protocol
+------------------------
+- bitwise operations :
+    - `&` (bitwise and)
+    - `|` (bitwise or)
+    - `>>` (right-shift)
+    - `<<` (left-shift)
+---------
+- to wrap your object with a context manager :
+    - `from contextlib import closing`
+    - wrap the constructor with the method :
+        - `with closing(myObject()) as obj`
+
