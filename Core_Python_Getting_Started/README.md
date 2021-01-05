@@ -58,7 +58,93 @@
     - after python3.7 : 
         - keys are kept in insertion order
 -----
+---
+## Chapter 3 (Modularity)
+- **Modules** :
+    - **self-contained reusable pieces that can be combined in new ways to solve different problems**
+
+
+- `**` : is the exp. (^) operator in python
+
+
+- `__name__` :  allow us to detect whether a module is to run as a script or imported into another module 
+    - ex. `if __name__ == '__main__'`
+    
+
+- to access command line args :
+    - use `sys.argv[]`
+        - [0] is the script name
+
 ----
+
+
+
+
+
+
+
+
+
+----
+## Chapter -3 (Iteration) 
+#### Comprehension :
+- Concise syntax for describing (list, set and dictionaries)
+    - readable and expressive 
+    - ex. `[len(word) for word in words]`
+    
+
+- dict comprehension does not work on the dict source (but return the keys)
+    - so use `dicr.items()` to get values and keys
+    
+- you can filter the comprehension using a **predict** 
+
+
+- comprehension should normally have no side effect 
+----
+- Zen : `simple is better than complex`
+---
+
+#### iteration protocol
+- iterator :
+    - can be passed to `next()` to get the next value in the sequence 
+- iterable :
+    - can be passes to `iter()` to produce an iterator 
+---
+#### Generator
+- iterables defined by functions
+- lazy evaluation (compute the next value on demand)
+- can model infinite sequence of values with no definite end
+- a generator function must include at least one `yield` statement
+- each time you call a generator function  it return a separate generator 
+
+
+- generator expression :
+    - `(x  for x in range(1, 10000000000000))`
+        - return a generator
+----
+#### iteration tools
+- `sum()`
+- `enumerate()` (todo: look up?!)
+- `any()` : return true if any elements is true
+- `all()` : return true if all the elements is true 
+- `zip()` : synchronize iteration across two or more iterables
+  
+
+- we also have the `itertools` provide a lot of useful functions
+    - `islice(iterator, num)` : perform lazy slicing of any iterators 
+    - `count()` : an unbounded arithmetic sequence of ints
+    - `chain()` : lazily contacting some iterables togethers   
+    
+    
+
+
+
+
+
+
+
+
+---
 ## Chapter -2 (Classes)
 - **classes** :
     - define the structure and behaviour of an object
@@ -108,7 +194,7 @@
         - no method calls or attribute look up are bonded to actual objects until the moment they are called
             - so you can try any method on any object
     - inheritance is used in python for sharing implementations
----
+    
 ---
 ## Chapter -1
 - what is a resource ?
